@@ -26,6 +26,27 @@
     color: white;
     font-size: 22px;
 }
+
+
+
+div#example_length {
+    width: 50%;
+    float: left;
+}
+
+div#example_filter {
+    width: 50%;
+    float: right;
+}
+select,input,input[type=text], input[type=email], input[type=password], input[type=Number] {
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px solid #008000;
+        box-sizing: border-box;
+    }
+
     </style>
 
 

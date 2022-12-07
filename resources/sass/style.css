@@ -50,7 +50,7 @@ button {
       form {
         border: 0px solid #f1f1f1;
     }
-    input,input[type=text], input[type=email], input[type=password], input[type=Number] {
+    select,input,input[type=text], input[type=email], input[type=password], input[type=Number] {
         width: 100%;
         margin: 8px 0;
         padding: 12px 20px;
