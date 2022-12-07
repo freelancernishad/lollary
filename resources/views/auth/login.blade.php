@@ -5,7 +5,7 @@
     <div class="row ">
 
         <div class="col-md-6">
-            <img width="100%" src="login.jpeg" alt="">
+            <img width="100%" src="{{ asset('login.jpeg') }}" alt="">
 
         </div>
 
