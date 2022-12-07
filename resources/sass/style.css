@@ -1,0 +1,158 @@
+body {
+    margin: 0px;
+}
+.conatiner {
+    width: 100%;
+}
+.Header {
+    width: 100%;
+    height: 81px;
+    background-color: #dbdbdb;
+}
+.nav-menu {
+    width: 33%;
+    float: left;
+}
+.running-content {
+    width: 33%;
+    float: left;
+}
+.logo {
+    width: 32%;
+    float: left;
+}
+.logo img {
+    width: 62px;
+    float: right;
+    margin-right: 80px;
+    padding-top: 5px;
+}
+.menu-items a {
+    text-decoration: none;
+    padding: 20px;
+}
+nav.menu-items {
+    margin-top: 23px;
+    margin-left: 34px;
+}
+.running-content p {
+    text-align: center;
+}
+button {
+    background-color: #4CAF50;
+    width: 100%;
+     color: orange;
+     padding: 15px;
+     margin: 10px 0px;
+     border: none;
+     cursor: pointer;
+      }
+      form {
+        border: 0px solid #f1f1f1;
+    }
+    input,input[type=text], input[type=email], input[type=password], input[type=Number] {
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px solid #008000;
+        box-sizing: border-box;
+    }
+    .login-box  {
+        width: 93%;
+        display: block;
+        margin: auto;
+        margin-top: 50px;
+    }
+    .profile {
+        width: 93%;
+        display: block;
+        margin: auto;
+        margin-top: 5px;
+        background: #fc047e;
+        padding: 21px 30px;
+        border-radius: 20px;
+        color: white;
+        font-family: sans-serif;
+    }
+
+
+    a.forgot-pass {
+        float: right;
+        margin-right: 4px;
+        text-decoration: none;
+    }
+    select#country {
+        width: 100%;
+        border: 2px solid #008000;
+
+        padding: 10px;
+        padding-left: 13px;
+    }
+    p.my-acc {
+        text-align: center;
+        font-size: 25px;
+    }
+    img.cheque-photo {
+        width: 90%;
+        margin: auto;
+        display: block;
+    }
+    .profile-bank-cheque {
+        display: block;
+        margin: auto;
+        width: 93%;
+        margin-top: 53px;
+        background-color: #fc047e;
+        color: white !important;
+        border-radius: 20px;
+        text-align: center;
+        padding: 30px 8px;
+        font-size: 30px;
+        font-family: cursive;
+    }
+    .trasfer-cashout {
+        width: 50%;
+        float: left;
+    }
+    .paypal-western {
+        width: 50%;
+        float: left;
+    }
+    .profile-bank-details {
+        width: 94%;
+        margin: auto;
+        display: block;
+        margin-top: 50px;
+        height: 200px;
+        background: #d1b7b7;
+        padding: 30px;
+        border-radius: 23px;
+    }
+    a.Bank-trans {
+        padding: 30px 4px;
+        display: block;
+    }
+    img.icon-details {
+        display: block;
+        margin: 0 auto;
+    }
+    p.cashout {
+        width: 50%;
+        margin: auto;
+    }
+    p.western-union {
+        width: 50%;
+        margin: auto;
+    }
+    p.paypal {
+        width: 50%;
+        margin: auto;
+    }
+    p.Bank-trans {
+        width: 50%;
+        margin: auto;
+    }
+    button.navbar-toggler {
+        width: 52px;
+    }
