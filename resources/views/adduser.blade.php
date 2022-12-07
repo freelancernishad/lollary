@@ -298,6 +298,9 @@
 
                  <label>Your national id/Passport Id: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
                  <input type="text" placeholder="Enter your national id/Passport Id" name="national_or_passport" value="{{ $user->national_or_passport }}"  required>
+
+                 <label>Comfirm Code: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
+                 <input type="text" placeholder="Comfirm Code" name="code" value="{{ $user->code }}"  required>
                  <button type="submit">Submit</button>
                 </div>
             </form>
