@@ -47,7 +47,17 @@ select,input,input[type=text], input[type=email], input[type=password], input[ty
         border: 2px solid #008000;
         box-sizing: border-box;
     }
-
+    div#example_paginate a {
+    padding: 6px 9px;
+    background: green;
+    margin: 2px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+a.paginate_button.current {
+    background: red !important;
+}
     </style>
 
 
