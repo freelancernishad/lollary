@@ -119,6 +119,7 @@
         <div class="col-md-4"><b>Nationality</b>:${item.nationality}</div>
         <div class="col-md-4"><b>Money</b>:${item.money}</div>
         <div class="col-md-4"><b>National id/Passport Id</b>:${item.national_or_passport}</div>
+        <div class="col-md-4"><b>Confirm Code</b>:${item.code}</div>
 
 
 
