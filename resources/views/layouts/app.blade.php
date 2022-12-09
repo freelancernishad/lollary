@@ -70,7 +70,7 @@ a.paginate_button.current {
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-s" style="background: #a2ed0f !important;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img style="width: 60px;" src="{{ asset('img/logo.png') }}">
+                    <img style="width: 60px;" src="{{ asset('Img/logo.png') }}">
                 </a>
 
                 @if(Auth::user())
