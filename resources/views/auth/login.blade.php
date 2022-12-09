@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div style="background: linear-gradient(0deg, rgb(0 0 0 / 82%),rgb(0 0 0 / 81%)), url(login.jpeg);background-size: inherit;background-position: center;padding-bottom: 75px;">
+<div style="background: linear-gradient(0deg, rgb(0 0 0 / 82%),rgb(0 0 0 / 81%)), url({{ asset('login.jpeg') }});background-size: inherit;background-position: center;padding-bottom: 75px;">
 <div class="container" >
     <div class="row justify-content-center" >
 
