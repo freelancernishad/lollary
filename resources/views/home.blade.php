@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="profile">
-                <p class="my-acc">{{ __('messages.account') }}</p>
+                <p class="my-acc" style="    font-size: 30px">{{ __('messages.account') }}</p>
                 <p class="pro-name">{{ __('messages.Name') }}: {{ Auth::user()->name }} </p>
                 <p class="pro-country">{{ __('messages.Country') }}: {{ Auth::user()->country }} </p>
                 <p class="pro-phone">{{ __('messages.Phone') }}: {{ Auth::user()->phone }} </p>
@@ -13,7 +13,7 @@
             </div>
 
             <div class="profile-bank-cheque" style="font-family: sans-serif;">
-                <p class="bank-cheque">{{ __('messages.cheque') }}</p>
+                <p class="bank-cheque" style="    font-size: 30px">{{ __('messages.cheque') }}</p>
                 <img class="cheque-photo" width="100%"
                     src="{{ asset(Auth::user()->bank_check) }}"
                     alt="">
@@ -21,7 +21,7 @@
 
 
             <div class="profile-bank-cheque" style="font-family: sans-serif;">
-                <p class="bank-cheque">{{ __('messages.balance') }}</p>
+                <p class="bank-cheque" style="    font-size: 30px">{{ __('messages.balance') }}</p>
                 {{ Auth::user()->money }} {{ Auth::user()->currency }}
             </div>
 
