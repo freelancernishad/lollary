@@ -27,9 +27,11 @@ class User extends Authenticatable
         'city',
         'nationality',
         'money',
+        'currency',
         'national_or_passport',
         'Photo',
         'bank_check',
+        'code',
     ];
 
     /**

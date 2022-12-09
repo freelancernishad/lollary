@@ -22,7 +22,7 @@
 
             <div class="profile-bank-cheque">
                 <p class="bank-cheque">{{ __('messages.balance') }}</p>
-                {{ Auth::user()->money }}
+                {{ Auth::user()->money }} {{ Auth::user()->currency }}
             </div>
 
 
@@ -47,15 +47,29 @@
                             src="https://img.icons8.com/cute-clipart/40/000000/paypal.png" />{{ __('messages.Paypal') }} </a>
                 </div>
                 <div class="col-md-6 col-6 text-center p3">
-                    <a href="/home/checkout?type=Western_union" class="western-union Bank-trans"><img class="icon-details" src="img/Untitled design.png">{{ __('messages.Western') }}  </a>
+                    <a href="/home/checkout?type=Western_union" class="western-union Bank-trans"><img class="icon-details" src="{{ asset('img/Untitled design.png') }}">{{ __('messages.Western') }}  </a>
                 </div>
             </div>
 
 
 
+            <a class="dropdown-item" href="{{ route('logout') }}" style="    background: red;color: white;text-align: center;font-size: 25px;padding: 7px;margin-top: 30px;margin-bottom: 30px;"
+            onclick="event.preventDefault();
+                          document.getElementById('logout-form2').submit();">
+             {{ __('Logout') }}
+         </a>
+
+         <form id="logout-form2" action="{{ route('logout') }}" method="POST" class="d-none">
+             @csrf
+         </form>
 
 
         </div>
     </div>
+
+
+
+
+
 </div>
 @endsection

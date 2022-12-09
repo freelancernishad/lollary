@@ -63,8 +63,8 @@ a.paginate_button.current {
 
 
 </head>
-<body>
-    <div id="app">
+<body style="font-family: cursive;">
+    <div id="app" >
 
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-s" style="background: #a2ed0f !important;">
@@ -72,11 +72,76 @@ a.paginate_button.current {
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img style="width: 60px;" src="{{ asset('img/logo-removebg-preview.png') }}">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                @if(Auth::user())
+
+                @if(Auth::user()->role=='admin')
+
+
+                <div class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ __('Users') }}
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('user.index') }}">
+                            {{ __('Users List') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('user.create') }}">
+                            {{ __('New User') }}
+                        </a>
+                    </div>
+
+                </div>
+
+                @endif
+                @endif
+
+
+
+                <div class="menuSection d-flex">
+                <select class="form-control changeLang mr-1" style="width:75px;margin-right: 7px;">
+                    <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                    <option value="ml" {{ session()->get('locale') == 'ml' ? 'selected' : '' }}>Malay</option>
+                    <option value="hi" {{ session()->get('locale') == 'hi' ? 'selected' : '' }}>Hindi</option>
+                    <option value="th" {{ session()->get('locale') == 'th' ? 'selected' : '' }}>Thai</option>
+                    <option value="bn" {{ session()->get('locale') == 'bn' ? 'selected' : '' }}>Bangla</option>
+                    <option value="ar" {{ session()->get('locale') == 'ar' ? 'selected' : '' }}>Arabic</option>
+                </select>
+
+
+
+                @if(Auth::user())
+
+
+
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <img style="width: 50px;height: 50px;border: 3px solid #fc047e;border-radius: 50%;padding: 4px;" src="{{ asset(Auth::user()->Photo) }}" alt="">
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+
+                @endif
+
+
+
+            </div>
+
+                {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button> --}}
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="display: none !important;">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
@@ -87,9 +152,9 @@ a.paginate_button.current {
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('messages.login') }}</a>
-                                </li>
+                                </li> --}}
                             @endif
 
                             @if (Route::has('register'))
@@ -155,13 +220,13 @@ a.paginate_button.current {
                 </div>
             </div>
         </nav>
-        <marquee behavior="" direction="">{{ __('messages.running') }}</marquee>
+        <marquee style="margin-bottom: -7px;" behavior="" direction="">{{ __('messages.running') }}</marquee>
 
 
 
 
 
-        <main class="py-4">
+        <main class="">
 
             @yield('content')
         </main>
@@ -182,6 +247,7 @@ a.paginate_button.current {
         });
 
     </script>
+
 
 </body>
 </html>

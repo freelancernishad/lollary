@@ -51,8 +51,9 @@ Route::group(['prefix' => 'home','middleware' => ['auth']], function() {
     ]);
 
 
-    Route::get('/checkout', function () {
-        return view('checkout');
+    Route::get('/checkout', function (Request $request) {
+        $type = $request->type;
+        return view('checkout',compact('type'));
     });
 
     Route::get('/checkout/success', function (Request $request) {
@@ -61,11 +62,17 @@ Route::group(['prefix' => 'home','middleware' => ['auth']], function() {
         $Amount = $request->Amount;
 
           $usercount = User::find($id);
-// return $usercount->money;
+
 
 
         if($code===$usercount->code){
+
             $money = (int)$usercount->money-$Amount;
+
+            if($money<0){
+                return 2;
+            }
+
             $usercount->update(['money'=>$money]);
             return 1;
         }else{

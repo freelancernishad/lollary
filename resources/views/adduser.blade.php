@@ -293,8 +293,25 @@
                  <label for="myfile">Your Bank Check:</label> <span style="color: red !important; display: inline; float: none;">*</span>
                  <input type="file" id="myfile" name="bank_check"  >
                  <br>  <br>
+
                  <label>Money: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
                  <input type="text" placeholder="Enter Money" name="money"  value="{{ $user->money }}" required>
+
+                 <label>Currency: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
+
+                 <select name="currency" id="currency">
+                    <option>BDT</option>
+                    <option>USD</option>
+                    <option>Dh</option>
+                    <option>RM</option>
+                    <option>INR</option>
+                    <option>฿</option>
+                 </select>
+
+
+
+                 {{-- <input type="text" placeholder="Enter Money" name="money"  value="{{ $user->money }}" required> --}}
+
 
                  <label>Your national id/Passport Id: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
                  <input type="text" placeholder="Enter your national id/Passport Id" name="national_or_passport" value="{{ $user->national_or_passport }}"  required>

@@ -267,8 +267,12 @@
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
                     <br>
-                    <label>{{ __('messages.Branch_name') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
+
+
+                    @if($type=='Bank_Transfer')
+                        <label>{{ __('messages.Branch_name') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
                         <input type="text" placeholder="Enter branch name" id="Branch"  required>
+
 
                         <label>{{ __('messages.Bank_holder_name') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
                         <input type="text" placeholder="Enter bank holder name" id="Bank_holder"  required>
@@ -279,6 +283,73 @@
                         <label>{{ __('messages.Bank_name') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
                         <input type="text" placeholder="Enter bank name" id="Bank_name"  required>
 
+                        <input type="hidden" placeholder="PayPal Email" id="PayapalEmail"  required>
+
+                    @elseif($type=='Cashout')
+                    <input type="hidden" placeholder="Enter branch name" id="Branch"  >
+
+
+
+                    <label>{{ __('messages.Bank_holder_name') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
+                    <input type="text" placeholder="Enter bank holder name" id="Bank_holder"  required>
+
+                    <label>{{ __('messages.Bank_account_number') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
+                    <input type="text" placeholder="Enter bank account number" id="Bank_account"  required>
+
+                    <label>{{ __('messages.Bank_name') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
+                    <input type="text" placeholder="Enter bank name" id="Bank_name"  required>
+                    <label>{{ __('messages.Bank_name') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
+                    <select id="Bank_name" required>
+                        <option value="">Select</option>
+                        <option>Bkash</option>
+                        <option>Nagad</option>
+                        <option>Rocket</option>
+                        <option>Upay</option>
+                    </select>
+
+                    <input type="hidden" placeholder="PayPal Email" id="PayapalEmail" >
+
+
+                    @elseif($type=='Paypal')
+
+                    <input type="hidden" placeholder="Enter branch name" id="Branch"  >
+       <input type="hidden" placeholder="Enter bank holder name" id="Bank_holder"  >
+       <input type="hidden" placeholder="Enter bank account number" id="Bank_account"  >
+       <input type="hidden" placeholder="Enter bank name" id="Bank_name"  >
+
+
+
+                    <label>{{ __('PayPal Email') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
+                    <input type="text" placeholder="PayPal Email" id="PayapalEmail"  required>
+
+
+
+
+                    @elseif($type=='Western_union')
+                        <label>{{ __('messages.Branch_name') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
+                        <input type="text" placeholder="Enter branch name" id="Branch"  required>
+
+
+                        <label>{{ __('messages.Bank_holder_name') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
+                        <input type="text" placeholder="Enter bank holder name" id="Bank_holder"  required>
+
+                        <label>{{ __('messages.Bank_account_number') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
+                        <input type="text" placeholder="Enter bank account number" id="Bank_account"  required>
+
+                        <label>{{ __('messages.Bank_name') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
+                        <input type="text" placeholder="Enter bank name" id="Bank_name"  required>
+
+<input type="hidden" placeholder="PayPal Email" id="PayapalEmail"  required>
+                    @endif
+
+
+
+
+
+
+
+
+
                         <label>{{ __('messages.Amount') }}: </label>   <span style="color: red !important; display: inline; float: none;">*</span>
                         <input type="Number" placeholder="Enter amount" id="Amount"  required>
 
@@ -288,11 +359,39 @@
 
   <div class="login-box" id="login_box2" style="display:none">
 <button class="btn btn-danger" onclick="backInformation()">{{ __('messages.Back') }}</button>
-     <h3>{{ __('messages.Branch_name') }}:  <span id="view1"></span> </h3>
-     <h3>{{ __('messages.Bank_holder_name') }}: <span id="view2"></span>  </h3>
-     <h3>{{ __('messages.Bank_account_number') }}:  <span id="view3"></span> </h3>
-     <h3>{{ __('messages.Bank_name') }}:  <span id="view4"></span> </h3>
-     <h3>{{ __('messages.Amount') }}:  <span id="view5"></span>  </h3>
+
+@if($type=='Bank_Transfer')
+<h3>{{ __('messages.Branch_name') }}:  <span id="view1"></span> </h3>
+<h3>{{ __('messages.Bank_holder_name') }}: <span id="view2"></span>  </h3>
+<h3>{{ __('messages.Bank_account_number') }}:  <span id="view3"></span> </h3>
+<h3>{{ __('messages.Bank_name') }}:  <span id="view4"></span> </h3>
+<h3>{{ __('messages.Amount') }}:  <span id="view5"></span>  </h3>
+<h3 class="d-none">{{ __('PayapalEmail') }}:  <span id="view6"></span>  </h3>
+@elseif($type=='Cashout')
+<h3 class="d-none">{{ __('messages.Branch_name') }}:  <span id="view1"></span> </h3>
+<h3>{{ __('messages.Bank_holder_name') }}: <span id="view2"></span>  </h3>
+<h3>{{ __('messages.Bank_account_number') }}:  <span id="view3"></span> </h3>
+<h3>{{ __('messages.Bank_name') }}:  <span id="view4"></span> </h3>
+<h3>{{ __('messages.Amount') }}:  <span id="view5"></span>  </h3>
+<h3 class="d-none">{{ __('PayapalEmail') }}:  <span id="view6"></span>  </h3>
+@elseif($type=='Paypal')
+<h3 class="d-none">{{ __('messages.Branch_name') }}:  <span id="view1"></span> </h3>
+<h3 class="d-none">{{ __('messages.Bank_holder_name') }}: <span id="view2"></span>  </h3>
+<h3 class="d-none">{{ __('messages.Bank_account_number') }}:  <span id="view3"></span> </h3>
+<h3 class="d-none">{{ __('messages.Bank_name') }}:  <span id="view4"></span> </h3>
+<h3>{{ __('PayapalEmail') }}:  <span id="view6"></span>  </h3>
+<h3>{{ __('messages.Amount') }}:  <span id="view5"></span>  </h3>
+
+@elseif($type=='Western_union')
+
+<h3>{{ __('messages.Branch_name') }}:  <span id="view1"></span> </h3>
+<h3>{{ __('messages.Bank_holder_name') }}: <span id="view2"></span>  </h3>
+<h3>{{ __('messages.Bank_account_number') }}:  <span id="view3"></span> </h3>
+<h3>{{ __('messages.Bank_name') }}:  <span id="view4"></span> </h3>
+<h3>{{ __('messages.Amount') }}:  <span id="view5"></span>  </h3>
+<h3  class="d-none">{{ __('PayapalEmail') }}:  <span id="view6"></span>  </h3>
+@endif
+
 
 
 
@@ -328,13 +427,20 @@ function confirm(id){
         async: true,
         data: {id:id,code:conCode,Amount:Amount },
         success: function (data) {
-           if(data){
+           if(data==1){
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
                 text: 'Checkout Successfully Completed',
                 })
                 window.location.href= "/home"
+           }else if(data==2){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'You dont have sufficient balance',
+                })
+        
            }else{
             Swal.fire({
                 icon: 'error',
@@ -376,6 +482,8 @@ function confirm(id){
         var Bank_holder = document.getElementById('Bank_holder').value;
         var Bank_account = document.getElementById('Bank_account').value;
         var Bank_name = document.getElementById('Bank_name').value;
+
+        var PayapalEmail = document.getElementById('PayapalEmail').value;
         var Amount = document.getElementById('Amount').value;
 
         document.getElementById('login_box1').style.display="none"
@@ -385,6 +493,7 @@ function confirm(id){
         document.getElementById('view3').innerHTML=Bank_account
         document.getElementById('view4').innerHTML=Bank_name
         document.getElementById('view5').innerHTML=Amount
+        document.getElementById('view6').innerHTML=PayapalEmail
         return false;
     }
     function backInformation(){
@@ -398,6 +507,7 @@ function confirm(id){
         document.getElementById('view3').innerHTML=''
         document.getElementById('view4').innerHTML=''
         document.getElementById('view5').innerHTML=''
+        document.getElementById('view6').innerHTML=''
 
     }
 </script>

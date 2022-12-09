@@ -1,15 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row ">
+<div style="background: linear-gradient(0deg, rgb(0 0 0 / 82%),rgb(0 0 0 / 81%)), url(login.jpeg);background-size: inherit;background-position: center;padding-bottom: 75px;">
+<div class="container" >
+    <div class="row justify-content-center" >
 
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <img width="100%" src="{{ asset('login.jpeg') }}" alt="">
 
-        </div>
+        </div> --}}
 
-        <div class="col-md-6">
+        <div class="col-md-8" >
 
 
 
@@ -35,9 +36,9 @@
                             @enderror
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <input class="form-check-input" style="padding: 10px 11px !important;" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                <label class="form-check-label" for="remember">
+                                <label class="form-check-label text-white" style="font-size: 20px;margin-left: 10px;" for="remember">
                                     {{ __('messages.Remember') }}
                                 </label>
                             </div>
@@ -58,7 +59,7 @@
 
 
                 <div class="col-md-12 mt-5">
-                    <p>
+                    <p class="text-white" style="font-size: 18px;text-align: justify;">
 
                         {{ __('messages.desc') }}
 
@@ -69,5 +70,6 @@
 
 
     </div>
+</div>
 </div>
 @endsection
