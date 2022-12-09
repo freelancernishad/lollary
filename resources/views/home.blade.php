@@ -10,7 +10,7 @@
                 <p class="pro-country">{{ __('messages.Country') }}: {{ Auth::user()->country }} </p>
                 <p class="pro-phone">{{ __('messages.Phone') }}: {{ Auth::user()->phone }} </p>
                 {{-- <p class="pro-state">{{ __('messages.State') }}: {{ Auth::user()->city }}</p> --}}
-                <p class="pro-state">{{ __('N/P') }}: {{ Auth::user()->national_or_passport }}</p>
+                <p class="pro-state">{{ __('N/P No') }}: {{ Auth::user()->national_or_passport }}</p>
             </div>
 
             <div class="profile-bank-cheque" style="font-family: sans-serif;">
