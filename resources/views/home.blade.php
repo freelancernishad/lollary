@@ -12,7 +12,7 @@
                 <p class="pro-state">{{ __('messages.State') }}: {{ Auth::user()->city }}</p>
             </div>
 
-            <div class="profile-bank-cheque">
+            <div class="profile-bank-cheque" style="font-family: sans-serif;">
                 <p class="bank-cheque">{{ __('messages.cheque') }}</p>
                 <img class="cheque-photo" width="100%"
                     src="{{ Auth::user()->bank_check }}"
@@ -20,7 +20,7 @@
             </div>
 
 
-            <div class="profile-bank-cheque">
+            <div class="profile-bank-cheque" style="font-family: sans-serif;">
                 <p class="bank-cheque">{{ __('messages.balance') }}</p>
                 {{ Auth::user()->money }} {{ Auth::user()->currency }}
             </div>
