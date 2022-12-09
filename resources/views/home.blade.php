@@ -15,7 +15,7 @@
             <div class="profile-bank-cheque" style="font-family: sans-serif;">
                 <p class="bank-cheque">{{ __('messages.cheque') }}</p>
                 <img class="cheque-photo" width="100%"
-                    src="{{ Auth::user()->bank_check }}"
+                    src="{{ asset(Auth::user()->bank_check) }}"
                     alt="">
             </div>
 
