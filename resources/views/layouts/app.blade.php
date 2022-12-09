@@ -73,7 +73,7 @@ a.paginate_button.current {
                     <img style="width: 60px;" src="{{ asset('Img/logo.png') }}">
                 </a>
 
-                <p style="font-size: 25px;margin-bottom: 0;">Thailand Bank</p>
+                <p style="    font-size: 18px;margin-bottom: 0;width: 25%;">T. Bank</p>
                 @if(Auth::user())
 
                 @if(Auth::user()->role=='admin')
